@@ -6,12 +6,20 @@
 #include "download.h"
 #include "uncompress.h"
 
-std::string get_latest_version();
+std::string get_latest_version(std::string rate_limit_fallback);
 nlohmann::json get_default_configuration(std::string latest_version);
 void launch_fps_unlocker();
 
 int main() {
-	std::string latest_version = get_latest_version();
+	std::string latest_version = get_latest_version("error");
+	if (latest_version == "error") {
+		// an error has occured while accessing github api (rate limited or api endpoint update)
+		printf("An error has occured while accessing Github api,\nthis might be caused by exceeding the rate limit or Github api endpoint updates.\n");
+		printf("\nUpdate check process cancelled, directly launching latest download in 10 seconds...\n");
+		Sleep(10000);
+		launch_fps_unlocker();
+		return 0;
+	}
 	nlohmann::json configuration;
 	bool install_update;
 	printf("Found latest version: %s\n", latest_version.c_str());
@@ -31,22 +39,31 @@ int main() {
 	}
 	// install update if available
 	if (install_update) {
+		// download fps unlocker from source
 		printf("New version available, downloading from source...\n");
 		std::string update_source = "https://github.com/axstin/rbxfpsunlocker/releases/download/" + latest_version + "/rbxfpsunlocker-x64.zip";
 		download(update_source, "rbxfpsunlocker.zip");
 		uncompress("rbxfpsunlocker.zip", "rbxfpsunlocker.exe", "rbxfpsunlocker.exe");
+		// update configuration
+		configuration["installed_version"] = latest_version;
+		configuration_file.set_configuration(configuration);
+		// installation process completed
 		printf("Download completed.\n");
 	} else {
-		printf("Latest version installed.\n");
+		printf("No update is needed.\n");
 	}
 	launch_fps_unlocker();
 	return 0;
 }
 
-std::string get_latest_version() {
+std::string get_latest_version(std::string rate_limit_fallback) {
 	// json from github api
 	std::string version_raw = get_request("https://api.github.com/repos/axstin/rbxfpsunlocker/releases/latest", "Mozilla/5.0");
 	nlohmann::json version_json = nlohmann::json::parse(version_raw);
+	// fallback if exceeded github api rate limit
+	if (!version_json.contains("tag_name")) {
+		return rate_limit_fallback;
+	}
 	return version_json["tag_name"];
 }
 
