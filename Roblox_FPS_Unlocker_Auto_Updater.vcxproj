@@ -19,23 +19,24 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="configuration.cpp" />
-    <ClCompile Include="download.cpp" />
-    <ClCompile Include="get_request.cpp" />
+    <ClCompile Include="configuration\configuration.cpp" />
+    <ClCompile Include="download\download.cpp" />
+    <ClCompile Include="get_request\get_request.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="uncompress.cpp" />
+    <ClCompile Include="uncompress\uncompress.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="configuration.h" />
-    <ClInclude Include="download.h" />
-    <ClInclude Include="get_request.h" />
+    <ClInclude Include="configuration\configuration.h" />
+    <ClInclude Include="download\download.h" />
+    <ClInclude Include="get_request\get_request.h" />
     <ClInclude Include="resource.h" />
-    <ClInclude Include="uncompress.h" />
+    <ClInclude Include="uncompress\uncompress.h" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="icon.ico" />
   </ItemGroup>
   <ItemGroup>
+    <None Include=".gitignore" />
     <None Include="LICENSE" />
   </ItemGroup>
   <ItemGroup>

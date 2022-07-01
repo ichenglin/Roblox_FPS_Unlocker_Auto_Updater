@@ -1,10 +1,10 @@
 #include <iostream>
 #include <windows.h>
 #include <nlohmann/json.hpp>
-#include "configuration.h"
-#include "get_request.h"
-#include "download.h"
-#include "uncompress.h"
+#include "configuration/configuration.h"
+#include "get_request/get_request.h"
+#include "download/download.h"
+#include "uncompress/uncompress.h"
 
 std::string get_latest_version(std::string rate_limit_fallback);
 nlohmann::json get_default_configuration(std::string latest_version);
@@ -69,6 +69,7 @@ std::string get_latest_version(std::string rate_limit_fallback) {
 
 nlohmann::json get_default_configuration(std::string latest_version) {
 	nlohmann::json default_configuration;
+	default_configuration["configuration_version"] = 1;
 	default_configuration["installed_version"] = latest_version;
 	return default_configuration;
 }

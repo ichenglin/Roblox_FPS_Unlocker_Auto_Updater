@@ -15,36 +15,36 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="configuration.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="download.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="get_request.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="uncompress.cpp">
+    <ClCompile Include="configuration\configuration.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="download\download.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="get_request\get_request.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="uncompress\uncompress.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="configuration.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="download.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="get_request.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="uncompress.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="resource.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="configuration\configuration.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="download\download.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="get_request\get_request.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="uncompress\uncompress.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -55,6 +55,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="LICENSE" />
+    <None Include=".gitignore" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Roblox_FPS_Unlocker_Auto_Updater.rc">
