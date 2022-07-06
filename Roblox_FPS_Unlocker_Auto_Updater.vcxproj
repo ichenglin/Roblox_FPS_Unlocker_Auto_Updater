@@ -23,12 +23,14 @@
     <ClCompile Include="download\download.cpp" />
     <ClCompile Include="get_request\get_request.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="process\process.cpp" />
     <ClCompile Include="uncompress\uncompress.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="configuration\configuration.h" />
     <ClInclude Include="download\download.h" />
     <ClInclude Include="get_request\get_request.h" />
+    <ClInclude Include="process\process.h" />
     <ClInclude Include="resource.h" />
     <ClInclude Include="uncompress\uncompress.h" />
   </ItemGroup>
@@ -38,6 +40,7 @@
   <ItemGroup>
     <None Include=".gitignore" />
     <None Include="LICENSE" />
+    <None Include="README.md" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Roblox_FPS_Unlocker_Auto_Updater.rc" />
