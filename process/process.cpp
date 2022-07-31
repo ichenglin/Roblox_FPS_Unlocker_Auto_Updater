@@ -10,8 +10,7 @@ std::vector<HANDLE> Process::get_process_by_name(std::string process_name) {
 	size_t count = 0;
 	if (Process32First(snapshot, &entry) == TRUE) {
 		while (Process32Next(snapshot, &entry) == TRUE) {
-			std::wstring process_name_wide = std::wstring(process_name.begin(), process_name.end());
-			if (_wcsicmp(entry.szExeFile, process_name_wide.c_str()) == 0) {
+			if (_stricmp(entry.szExeFile, process_name.c_str()) == 0) {
 				HANDLE match_process = OpenProcess(PROCESS_ALL_ACCESS, FALSE, entry.th32ProcessID);
 				processes.push_back(match_process);
 			}
