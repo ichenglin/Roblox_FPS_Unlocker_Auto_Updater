@@ -21,18 +21,22 @@
   <ItemGroup>
     <ClCompile Include="configuration\configuration.cpp" />
     <ClCompile Include="download\download.cpp" />
+    <ClCompile Include="file_system\file_system.cpp" />
     <ClCompile Include="get_request\get_request.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="process\process.cpp" />
     <ClCompile Include="uncompress\uncompress.cpp" />
+    <ClCompile Include="utilities\utilities.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="configuration\configuration.h" />
     <ClInclude Include="download\download.h" />
+    <ClInclude Include="file_system\file_system.h" />
     <ClInclude Include="get_request\get_request.h" />
     <ClInclude Include="process\process.h" />
     <ClInclude Include="resource.h" />
     <ClInclude Include="uncompress\uncompress.h" />
+    <ClInclude Include="utilities\utilities.h" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="icon.ico" />
@@ -119,6 +123,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -133,6 +138,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -147,6 +153,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -161,6 +168,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>

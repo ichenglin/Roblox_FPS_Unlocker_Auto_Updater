@@ -33,6 +33,12 @@
     <ClCompile Include="process\process.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="file_system\file_system.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="utilities\utilities.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="resource.h">
@@ -51,6 +57,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="process\process.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="file_system\file_system.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="utilities\utilities.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

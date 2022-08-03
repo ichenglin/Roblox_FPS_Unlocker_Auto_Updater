@@ -6,6 +6,7 @@
 #include "get_request/get_request.h"
 #include "download/download.h"
 #include "uncompress/uncompress.h"
+#include "file_system/file_system.h"
 
 std::string get_latest_version(std::string rate_limit_fallback);
 nlohmann::json get_default_configuration(std::string latest_version);
@@ -53,8 +54,11 @@ int main() {
 		// download fps unlocker from source
 		printf("New version available, downloading from source...\n");
 		std::string update_source = "https://github.com/axstin/rbxfpsunlocker/releases/download/" + latest_version + "/rbxfpsunlocker-x64.zip";
-		download(update_source, "rbxfpsunlocker.zip");
-		uncompress("rbxfpsunlocker.zip", "rbxfpsunlocker.exe", "rbxfpsunlocker.exe");
+		std::string update_folder = "downloads\\" + latest_version;
+		std::string update_location = "downloads\\" + latest_version + "\\rbxfpsunlocker.zip";
+		FileSystem::directory_create(update_folder);
+		download(update_source, update_location);
+		uncompress(update_location, "rbxfpsunlocker.exe", "rbxfpsunlocker.exe");
 		// update configuration
 		configuration["installed_version"] = latest_version;
 		configuration_file.set_configuration(configuration);
